@@ -1,0 +1,21 @@
+h1 {
+  font-size: 3vw;
+  letter-spacing: 2px;
+}
+.form {
+  padding: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signUp {
+  width: 300px;
+  height: 600px;
+}
+.splide,
+.splide__slide {
+  justify-content: center !important;
+  display: flex !important;
+  height: 100vh;
+}

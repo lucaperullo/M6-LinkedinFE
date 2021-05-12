@@ -1,0 +1,112 @@
+.col-md-2 {
+  width: 35% !important;
+}
+.profPic {
+  border: 3px solid rgb(255, 255, 255);
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  box-shadow: inset 0px 0px 20px 20px white;
+}
+.proPicContainer:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.proPicContainer {
+  margin-top: -30px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebarInfo {
+  margin-top: -5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar {
+  box-shadow: 0px 0px 10px 2px rgba(161, 161, 161, 0.534);
+  width: 216px;
+  border-radius: 10px !important;
+}
+.sidebar:hover {
+  animation: colorfull 4s alternate-reverse infinite;
+}
+@keyframes colorfull {
+  0% {
+    box-shadow: 0px 0px 10px 5px rgba(161, 161, 161, 0.534);
+  }
+  50% {
+    box-shadow: 0px 0px 18px 10px rgba(161, 161, 161, 0.534);
+  }
+  100% {
+    box-shadow: 0px 0px 10px 5px rgba(161, 161, 161, 0.534);
+  }
+}
+.sidebar > .card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.avatar {
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+}
+.postCard {
+  box-shadow: 0px 0px 10px 1px rgba(148, 148, 148, 0.527);
+  border-radius: 5px;
+  background-color: white;
+  margin-top: 20px;
+  padding: 10px;
+}
+.rope {
+  display: flex;
+}
+.tag {
+  position: relative;
+  left: 6px;
+  top: -6px;
+  font-size: 11px;
+}
+h4 {
+  position: relative;
+  left: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.postTime {
+  font-size: 10px;
+  color: rgb(148, 148, 148);
+  position: absolute;
+
+  right: 75px;
+}
+.options {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
+.optionDel {
+  font-size: 20px;
+  position: relative;
+  opacity: 0;
+  right: -15px;
+}
+.options:hover > .optionDel {
+  opacity: 1;
+  right: -35px;
+}
+.optionEdit {
+  position: relative;
+  opacity: 0;
+  right: 0;
+  top: 0;
+}
+.options:hover > .optionEdit {
+  opacity: 1;
+  top: 35px;
+}
