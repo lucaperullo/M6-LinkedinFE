@@ -7,6 +7,7 @@ import Registration from "./components/Registrationpage";
 import Login from "./components/LoginPage";
 import React from "react";
 import Feed from "./components/Feed";
+import NavSmall from "./components/NavSmall";
 
 class App extends React.Component {
   state = {
@@ -58,6 +59,7 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <NavSmall />
         <NavBar {...this.state.data} />
         <Route path="/user/:id" render={(props) => <Profile {...props} />} />
 

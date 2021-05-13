@@ -8,7 +8,7 @@ import {
   Container,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import "./styles/navbar.css";
 export default class NavBar extends React.Component {
   render() {
     if (

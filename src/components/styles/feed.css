@@ -116,3 +116,8 @@ h4 {
   opacity: 1;
   top: 35px;
 }
+@media (max-width: 841px) {
+  .sidebar {
+    display: none;
+  }
+}

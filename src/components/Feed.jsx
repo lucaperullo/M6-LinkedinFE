@@ -212,7 +212,7 @@ class Feed extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={6}>
+            <Col xs={12} md={6}>
               <PostMaker fetch={this.getPosts} postId={this.postsId} />
 
               {!this.state.posts.length > 0 ? (

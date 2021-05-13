@@ -1,0 +1,16 @@
+.MuiBottomNavigation-root {
+  display: none !important;
+}
+
+@media screen and (max-width: 992px) {
+  nav {
+    display: none !important;
+  }
+  .MuiBottomNavigation-root {
+    z-index: 4;
+    display: flex !important;
+    position: fixed;
+    bottom: 0;
+    width: 100% !important;
+  }
+}

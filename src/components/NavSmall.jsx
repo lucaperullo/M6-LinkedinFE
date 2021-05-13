@@ -7,7 +7,6 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import "./styles/navbar.css";
-
 const useStyles = makeStyles({
   root: {
     width: 500,
@@ -31,9 +30,7 @@ export default function LabelBottomNavigation() {
       <BottomNavigationAction
         label="Recents"
         value="recents"
-        icon={
-         
-        }
+        icon={<RestoreIcon />}
       />
       <BottomNavigationAction
         label="Favorites"
