@@ -176,7 +176,7 @@ class Feed extends React.Component {
             }}
           />
           <Row style={{ marginTop: "5vh", justifyContent: "space-evenly" }}>
-            <Col xs={2}>
+            <Col className="d-none d-xl-block" xs={2}>
               <Card className="sidebar">
                 <Card.Img
                   draggable="false"
@@ -212,7 +212,7 @@ class Feed extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={12} md={6}>
+            <Col xs={12} md={9} lg={8} xl={6}>
               <PostMaker fetch={this.getPosts} postId={this.postsId} />
 
               {!this.state.posts.length > 0 ? (
