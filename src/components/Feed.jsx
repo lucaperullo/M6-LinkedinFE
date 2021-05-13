@@ -234,15 +234,16 @@ class Feed extends React.Component {
                   </div>
                 </Container>
               ) : (
-                this.state.posts.map((post) => {
-                  return (
-                    <div className="postCard">
-                      <p className="postTime">
-                        {moment(post.createdAt).fromNow()}
-                      </p>
-
-                      {this.state.posts.username ===
-                      this.props.state.data.username ? (
+                this.state.posts
+                  .filter((post) => {
+                    return post.username === this.props.state.data.username;
+                  })
+                  .map((post) => {
+                    return (
+                      <div className="postCard">
+                        <p className="postTime">
+                          {moment(post.createdAt).fromNow()}
+                        </p>
                         <div className="options">
                           <BsThreeDotsVertical />
                           <MdDeleteSweep
@@ -254,50 +255,124 @@ class Feed extends React.Component {
                             className="optionEdit"
                           />
                         </div>
-                      ) : (
-                        <></>
-                      )}
-                      <div className="rope">
-                        <img
-                          draggable="false"
-                          className="avatar"
-                          src={
-                            post.user
-                              ? post.user.image
-                              : "https://www.sunchem.nl/wp-content/uploads/H_About/Teamphotos/profile-placeholder.jpg"
-                          }
-                        />
-                        <div className="userTag">
-                          <h4>{post.username} </h4>
-                          <p className="text-muted tag">
-                            {"@" + post.username}
-                          </p>
+                        <div className="rope">
+                          <img
+                            draggable="false"
+                            className="avatar"
+                            src={
+                              post.user_picture
+                                ? post.user_picture
+                                : "https://www.sunchem.nl/wp-content/uploads/H_About/Teamphotos/profile-placeholder.jpg"
+                            }
+                          />
+                          <div className="userTag">
+                            <h4>{post.username} </h4>
+                            <p className="text-muted tag">
+                              {"@" + post.username}
+                            </p>
+                          </div>
+                        </div>
+                        <p
+                          style={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                          }}
+                        >
+                          {post.text && post.text}
+                        </p>
+                        <br />
+                        {post.img && (
+                          <img
+                            draggable="false"
+                            alt={post._id}
+                            src={post.img}
+                            height={200}
+                          />
+                        )}
+                        <hr />
+                        <div className="rope">
+                          <FacebookCounter />
+                          {/* <FacebookSelector /> */}
                         </div>
                       </div>
-                      <p
-                        style={{ overflow: "hidden", textOverflow: "ellipsis" }}
-                      >
-                        {post.text && post.text}
-                      </p>
-                      <br />
-                      {post.img && (
-                        <img
-                          draggable="false"
-                          alt={post._id}
-                          src={post.img}
-                          height={200}
-                        />
-                      )}
-                      <hr />
-                      <div className="rope">
-                        <FacebookCounter />
-                        {/* <FacebookSelector /> */}
+                    );
+                  })
+              )}
+              {!this.state.posts.length > 0 ? (
+                <Container>
+                  <div style={{ marginTop: "50px", marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                  <div style={{ marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                  <div style={{ marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                  <div style={{ marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                  <div style={{ marginBottom: "50px" }}>
+                    {this.MyFacebookLoader()}
+                  </div>
+                </Container>
+              ) : (
+                this.state.posts
+                  .filter((post) => {
+                    return post.username !== this.props.state.data.username;
+                  })
+                  .map((post) => {
+                    return (
+                      <div className="postCard">
+                        <p className="postTime">
+                          {moment(post.createdAt).fromNow()}
+                        </p>
+
+                        <div className="rope">
+                          <img
+                            draggable="false"
+                            className="avatar"
+                            src={
+                              post.user_picture
+                                ? post.user_picture
+                                : "https://www.sunchem.nl/wp-content/uploads/H_About/Teamphotos/profile-placeholder.jpg"
+                            }
+                          />
+                          <div className="userTag">
+                            <h4>{post.username} </h4>
+                            <p className="text-muted tag">
+                              {"@" + post.username}
+                            </p>
+                          </div>
+                        </div>
+                        <p
+                          style={{
+                            overflow: "hidden",
+                            textOverflow: "ellipsis",
+                          }}
+                        >
+                          {post.text && post.text}
+                        </p>
+                        <br />
+                        {post.img && (
+                          <img
+                            draggable="false"
+                            alt={post._id}
+                            src={post.img}
+                            height={200}
+                          />
+                        )}
+                        <hr />
+                        <div className="rope">
+                          <FacebookCounter />
+                          {/* <FacebookSelector /> */}
+                        </div>
                       </div>
-                    </div>
-                  );
-                })
+                    );
+                  })
               )}
             </Col>
+
             <Col className="d-none d-xl-block" xs={3}>
               <Adv />
             </Col>
