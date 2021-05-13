@@ -8,6 +8,12 @@
   border-radius: 50%;
   box-shadow: inset 0px 0px 20px 20px white;
 }
+.postImage {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  position: relative;
+}
 .proPicContainer:hover {
   text-decoration: underline;
   cursor: pointer;

@@ -283,6 +283,7 @@ class Feed extends React.Component {
                         <br />
                         {post.img && (
                           <img
+                            className="postImage"
                             draggable="false"
                             alt={post._id}
                             src={post.img}
@@ -356,6 +357,7 @@ class Feed extends React.Component {
                         <br />
                         {post.img && (
                           <img
+                            className="postImage"
                             draggable="false"
                             alt={post._id}
                             src={post.img}
