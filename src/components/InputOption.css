@@ -1,0 +1,26 @@
+.input-option {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  cursor: pointer;
+}
+
+/* .input-option h6 {
+  margin-top: 5px;
+} */
+@media only screen and (max-width: 840px) {
+  .input-option h6 {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .input-option h6 {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .input-option h6 {
+    display: none;
+  }
+}

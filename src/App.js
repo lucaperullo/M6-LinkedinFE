@@ -12,18 +12,7 @@ import NavSmall from "./components/NavSmall";
 class App extends React.Component {
   state = {
     bearer: "",
-    data: {
-      area: "",
-      bio: "",
-      email: "",
-      image:
-        "https://i.pinimg.com/736x/0c/45/2c/0c452ca459fcf28b3c3b5322d11cbc62.jpg",
-      name: "",
-      password: "",
-      surname: "",
-      title: "",
-      username: "",
-    },
+    data: {},
   };
   getActualUser = async () => {
     try {

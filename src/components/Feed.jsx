@@ -19,6 +19,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdDeleteSweep } from "react-icons/md";
 import { RiEditBoxFill } from "react-icons/ri";
 import { FacebookSelector, FacebookCounter } from "@charkour/react-reactions";
+import CreatePost from "./CreatePost";
 
 class Feed extends React.Component {
   state = {
@@ -132,14 +133,14 @@ class Feed extends React.Component {
           let data = await response.json();
           console.log(data);
 
-          this.setState({
-            filtered: data.filter(
-              (post) => post.username === this.props.state.data.username
-            ),
-          });
+          // this.setState({
+          //   filtered: data.filter(
+          //     (post) => post.username === this.props.state.data.username
+          //   ),
+          // });
           this.setState({
             posts: data
-              .filter((post) => post.username)
+              // .filter((post) => post.username)
               .slice(-20)
               .reverse(),
           });
@@ -192,6 +193,7 @@ class Feed extends React.Component {
                     onClick={() => this.props.history.push("/user/me")}
                     className="profPic"
                     src={this.props.state.data.image}
+                    alt="photo2"
                   />
                   <h6>
                     {this.props.state.data.name} {this.props.state.data.surname}
@@ -216,7 +218,10 @@ class Feed extends React.Component {
               </Card>
             </Col>
             <Col xs={12} md={9} lg={8} xl={6}>
-              <PostMaker fetch={this.getPosts} postId={this.postsId} />
+              <PostMaker
+                fetch={this.getPosts}
+                userInfo={this.props.state.data}
+              />
 
               {!this.state.posts.length > 0 ? (
                 <Container>
