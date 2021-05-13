@@ -19,7 +19,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdDeleteSweep } from "react-icons/md";
 import { RiEditBoxFill } from "react-icons/ri";
 import { FacebookSelector, FacebookCounter } from "@charkour/react-reactions";
-import CreatePost from "./CreatePost";
+import Advertisement from "./Advertisement";
 
 class Feed extends React.Component {
   state = {
@@ -179,8 +179,8 @@ class Feed extends React.Component {
               // Default options for specific types
             }}
           />
-          <Row style={{ marginTop: "5vh", justifyContent: "space-evenly" }}>
-            <Col className="d-none d-xl-block" xs={2}>
+          <Row style={{ marginTop: "5vh", justifyContent: "space-between" }}>
+            <Col className="d-none d-md-block" md={2}>
               <Card className="sidebar">
                 <Card.Img
                   draggable="false"
@@ -217,7 +217,7 @@ class Feed extends React.Component {
                 </Card.Body>
               </Card>
             </Col>
-            <Col xs={12} md={9} lg={8} xl={6}>
+            <Col xs={12} md={7}>
               <PostMaker
                 fetch={this.getPosts}
                 userInfo={this.props.state.data}
@@ -273,6 +273,7 @@ class Feed extends React.Component {
                                 ? post.user_picture
                                 : "https://www.sunchem.nl/wp-content/uploads/H_About/Teamphotos/profile-placeholder.jpg"
                             }
+                            alt="user-pic"
                           />
                           <div className="userTag">
                             <h4>{post.username} </h4>
@@ -347,6 +348,7 @@ class Feed extends React.Component {
                                 ? post.user_picture
                                 : "https://www.sunchem.nl/wp-content/uploads/H_About/Teamphotos/profile-placeholder.jpg"
                             }
+                            alt="avatar"
                           />
                           <div className="userTag">
                             <h4>{post.username} </h4>
@@ -384,8 +386,8 @@ class Feed extends React.Component {
               )}
             </Col>
 
-            <Col className="d-none d-xl-block" xs={3}>
-              <Adv />
+            <Col className="d-none d-md-block" xs={3}>
+              <Advertisement />
             </Col>
           </Row>
           <Modal show={this.state.show}>

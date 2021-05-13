@@ -1,0 +1,21 @@
+.add {
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url("../../add.png");
+  background-position: center;
+}
+.ul_list ul {
+  flex-wrap: wrap;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+}
+.ul_list ul li {
+  margin-right: 25px;
+  font-size: 80%;
+}
+.ul_list ul li a {
+  text-decoration: none;
+  color: gray;
+}
