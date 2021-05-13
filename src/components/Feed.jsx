@@ -72,14 +72,17 @@ class Feed extends React.Component {
       console.log(error);
     }
   };
-  deletePost = async (id) => {
+  deletePost = async (post) => {
     try {
-      let response = await fetch(`http://localhost:5000/v1/posts/` + id, {
-        method: "DELETE",
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("token"),
-        },
-      });
+      let response = await fetch(
+        `http://localhost:5000/v1/posts/${post._id}/user/${post.userId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        }
+      );
       if (response.ok) {
         toast("Post deleted");
         this.getPosts();
@@ -239,6 +242,7 @@ class Feed extends React.Component {
                     return post.username === this.props.state.data.username;
                   })
                   .map((post) => {
+                    console.log(post._id);
                     return (
                       <div className="postCard">
                         <p className="postTime">
@@ -247,7 +251,7 @@ class Feed extends React.Component {
                         <div className="options">
                           <BsThreeDotsVertical />
                           <MdDeleteSweep
-                            onClick={() => this.deletePost(post._id)}
+                            onClick={() => this.deletePost(post)}
                             className="optionDel"
                           />
                           <RiEditBoxFill
